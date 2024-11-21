@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style/style.css">
+  <link rel="stylesheet" href="./style/normalize.css">
+  <link rel="icon" href="./images/logo.png" type="icon">
+</head>
+<body>
+
+   <!--HEADER  --> 
+  <header class="header">
+    <div class="items-header">
+      <a href="/" class="logo">
+        <img src="./images/logo.png" alt="Logo" />
+      </a>
+
+      
+      <nav>
+        <ul class="pages">
+          <li><a href="index.html" class="page-link">Home</a></li>
+          <li><a href="about.html" class="page-link">About</a></li>
+          <li><a href="product.html" class="page-link">Product</a></li>
+          <li><a href="contact.html" class="page-link">Contact</a></li>
+        </ul>
+      </nav>
+
+
+      <div class="hamburger" onclick="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <script>
+        function toggleMenu() {
+          const menu = document.querySelector('.pages');
+          menu.classList.toggle('active');
+        }
+      </script>
+
+
+
+      <form class="search-bar" action="/search" method="GET">
+        <input type="text" name="query" placeholder="Search..." class="search-input" />
+        <button type="submit" class="search-button">Search</button>
+      </form>
+    </div>
+  </header>
+
+  <!--MAIN  --> 
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-image">
+        <!-- Coloque uma imagem impactante aqui -->
+        <img src="images/hero-candles.jpg" alt="Beautiful candles illuminating a cozy room">
+      </div>
+      <div class="hero-text">
+        <h1 class="hero-title">Illuminate Your World</h1>
+        <p class="hero-tagline">Discover the perfect candle for every moment!</p>
+        <a href="product.html#collection" class="cta-button">Explore Our Collection</a>
+      </div>
+    </section>
+  
+    <!-- Featured Products -->
+    <section class="featured-section">
+      <h2 class="section-title">Featured Products</h2>
+      <div class="product-grid">
+        <div class="product-card-new">
+          <img src="images/vanilla-bean-candle.png" alt="Vanilla Bean Candle" class="product-image">
+          <h3 class="product-title">Vanilla Bean Candle</h3>
+          <p class="product-price">$29.99</p>
+        </div>
+        <div class="product-card-new"">
+          <img src="images/pumpkin.png" alt="Pumpkin Spice Candle" class="product-image">
+          <h3 class="product-title">Pumpnkin Spice Candle</h3>
+          <p class="product-price">$34.99</p>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Seasonal Promotions -->
+    <section class="promotions-section">
+      <h2 class="section-title">Seasonal Promotions</h2>
+      <p class="promotion-text">✨ Get 15% OFF your first candle purchase! Light up your space with our exclusive collection.  Don’t miss out!"</p>
+      <a href="product.html" class="cta-button">Get Your Discount Coupon</a>
+    </section>
+  
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+      <h2 class="section-title">What Our Customers Say</h2>
+      <div class="testimonials-grid">
+        <blockquote class="testimonial">
+          <p>"The scented candles are amazing! My home smells heavenly."</p>
+          <cite>- Sarah J.</cite>
+        </blockquote>
+        <blockquote class="testimonial">
+          <p>"These candles are perfect for gifting. Beautiful and long-lasting."</p>
+          <cite>- David L.</cite>
+        </blockquote>
+      </div>
+    </section>
+  </main>
+  
+
+  <!--FOOTER-->
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="./images/logo.png" alt="Logo">
+      </div>
+      <div class="footer-copyright">
+        &copy; 2023 Your Company. All rights reserved.
+      </div>
+      <div class="footer-contact">
+        <h3>Work with Us</h3>
+        <form action="/submit-cv" method="POST" enctype="multipart/form-data">
+          <input type="text" placeholder="Name" required>
+          <input type="email" placeholder="Email" required>
+          <textarea placeholder="Message" required></textarea>
+          <input type="file" name="cv" placeholder="Upload CV" required>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+  
+</body>
+</html>

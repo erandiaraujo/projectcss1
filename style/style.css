@@ -1,0 +1,657 @@
+/* HEADER STYLING */
+
+
+.header {
+  background-color: #a83d6c;
+  display: flex;
+  justify-content: space-between;
+  /*space between logo and the links*/
+  align-items: center;
+  padding: 1rem;
+}
+
+
+/*width 100% to make sure it uses the entire header*/
+.items-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.75rem;
+  transition: transform 0.3s ease;
+  /*makes the transition smooth when the logo gets bigger when hovered*/
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  /*slight zoom in when hovered*/
+}
+
+.logo img {
+  height: 50px;
+  margin-right: 1rem;
+}
+
+/* Menu links */
+.pages {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.25rem;
+  margin-left: auto;
+}
+
+.pages a {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  /* Smooth transitions for color*/
+}
+
+.pages a:hover {
+  color: #161416;
+  /* Change the color in the hover */
+}
+
+.pages li {
+  list-style-type: none;
+  /*remove bullet point from the menu item*/
+}
+
+/* Hamburger menu icon styles (visible only on mobile) */
+.hamburger {
+  display: none;
+  /* Hidden by default */
+  flex-direction: column;
+  /* Stack the bars */
+  gap: 4px;
+  /* Space between bars */
+  cursor: pointer;
+  /* Pointer cursor on hover */
+}
+
+/* Individual bars in the hamburger menu */
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+}
+
+/* Search bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+/* Styling for search input */
+.search-input {
+  padding: 0.5rem;
+  /* Inner spacing */
+  border: 1px solid #ccc;
+  /* Light gray border */
+  border-radius: 4px;
+  /* Rounded corners */
+  font-size: 1rem;
+  /* Font size */
+  width: 150px;
+  /* Default width */
+  transition: width 0.3s ease, border-color 0.3s ease;
+  /* Smooth resize and color transition */
+}
+
+/* Expands the input and changes the border color on focus */
+.search-input:focus {
+  width: 200px;
+  border-color: #a83d6c;
+  outline: none;
+  /* Remove default outline */
+}
+
+/* Styling for the search button */
+.search-button {
+  padding: 0.5rem 1rem;
+  /* Button size */
+  background-color: #831746;
+  /* Dark pink background */
+  color: #fff;
+  /* White text */
+  border: 3px;
+  /* Border size (none visible) */
+  border-radius: 4px;
+  /* Rounded corners */
+  font-size: 1rem;
+  /* Font size */
+  cursor: pointer;
+  /* Pointer cursor */
+  transition: background-color 0.3s ease;
+  /* Smooth color change */
+}
+
+/* Hover effect for search button: lighter background */
+.search-button:hover {
+  background-color: #d45a87;
+}
+
+
+
+/*HAMBJURGUER MENU*/
+
+/* Media queries to handle mobile responsiveness */
+@media (max-width: 768px) {
+
+  /* Hide the menu by default on mobile */
+  .pages {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    /* Stack links vertically */
+    align-items: center;
+  }
+
+  /* Show the hamburger icon on mobile */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Show the menu when it's toggled */
+  .pages.active {
+    display: flex;
+  }
+}
+
+
+
+
+
+
+
+/*FOOTER STYLING*/
+
+/* Footer Styles */
+
+/* General styling for the footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 0;
+}
+
+
+.footer-container {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo img {
+  height: 50px;
+}
+
+.footer-copyright {
+  font-size: 14px;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.footer-contact h3 {
+  margin-bottom: 10px;
+}
+
+.footer-contact form {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-contact input,
+.footer-contact textarea {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+}
+
+.footer-contact button {
+  background-color: #6d034f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
+/*STYLING FOR PRODUCTS*/
+
+/* Product Section Styles */
+.product-section {
+  position: relative;
+  /* Allows child elements to be positioned absolutely */
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+/* Styling for the video in the product section */
+.candle-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  /*This adjusts the video element's position in the center.*/
+  object-fit: cover;
+}
+
+/* Semi-transparent overlay over the video with centered content */
+.video-overlay {
+  position: absolute;
+  /* Covers the entire video */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* Adds a semi-transparent dark overlay */
+  display: flex;
+  /* Centers content inside using flexbox */
+  flex-direction: column;
+  /* Stacks items vertically */
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  /* Adds padding around the content */
+}
+
+/* Styling for content within the overlay */
+.video-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+/* Styles for the title inside the video overlay */
+.video-section h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Styles for the tagline under the title */
+.video-tagline {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Container for displaying features side by side */
+.video-features {
+  display: flex;
+  /* Aligns features in a row */
+  justify-content: center;
+  /* Centers features horizontally */
+  gap: 2rem;
+  /* Adds space between features */
+  margin-bottom: 2rem;
+}
+
+/* Individual feature container */
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+/* Highlight text for features */
+.feature-highlight {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.feature-text {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+
+/* Call-to-action section */
+.video-cta {
+  margin-top: 2rem;
+  /*space above shop now button*/
+}
+
+
+
+/* Button to shop now */
+.shop-now-btn {
+  padding: 1rem 2.5rem;
+  /* Adds space inside the button */
+  font-size: 1.25rem;
+  /* Slightly larger font size */
+  background-color: #ffffff;
+  /* White background */
+  color: #000000;
+  /* Black text */
+  border: none;
+  /* Removes default border */
+  border-radius: 30px;
+  /* Rounded button */
+  cursor: pointer;
+  /* Pointer cursor on hover */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  /* Smooth animations */
+}
+
+/* Hover effect for the button */
+.shop-now-btn:hover {
+  transform: translateY(-2px);
+  /* Slight upward movement */
+  background-color: #f0f0f0;
+  /* Slightly darker background */
+}
+
+/* Text below the CTA button */
+.promo-text {
+  margin-top: 1rem;
+  /* Space above */
+  font-size: 1rem;
+  /* Standard font size */
+  opacity: 0.9;
+  /* Slight transparency */
+}
+
+
+
+/* Product Categories */
+/* Background and padding for categories */
+.categories {
+  padding: 4rem 2rem;
+  background-color: rgb(250, 205, 213);
+}
+
+/* Grid layout for category cards */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /*The column must be at least 250px wide.
+    The column can expand up to a fraction (fr) of the remaining space in the container, 
+    ensuring the grid is fluid and adapts to different screen sizes.*/
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+
+/* Styles for individual category cards */
+.category-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+
+/* Hover effect for category cards */
+.category-card:hover {
+  transform: translateY(-5px);
+  /*clight upwards movement*/
+}
+
+
+/* Ensures images fit the card */
+.category-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/*styling for tet inside the card*/
+.category-card h3 {
+  padding: 1rem;
+  margin: 0;
+}
+
+/*styling for tet inside the card*/
+.category-card p {
+  padding: 0 1rem 1rem;
+  margin: 0;
+  color: #666;
+}
+
+
+
+/* Featured Products */
+.featured-products {
+  padding: 4rem 2rem;
+  background-image: linear-gradient(rgb(250, 205, 213), rgb(46, 46, 46))
+    /*gradient to meet the footer*/
+}
+
+
+/*Styling for the grid of featured produtcs*/
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* Responsive columns with a minimum width of 300px */
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+
+/*Styling for each product*/
+.product-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/*Images fits the car*/
+.product-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+
+/*Text about the product*/
+.product-info {
+  padding: 1.5rem;
+}
+
+.product-details {
+  margin: 1rem 0;
+  color: #666;
+}
+
+/*star rating*/
+.product-rating {
+  margin: 1rem 0;
+}
+
+
+/*color for the stars*/
+.stars {
+  color: #ffd700;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+/*button add to cart*/
+.add-to-cart {
+  width: 100%;
+  padding: 1rem;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /*smoth transition*/
+}
+
+.add-to-cart:hover {
+  background-color: #333;
+}
+
+/* Erandi */
+
+/* Main content styles */
+.main-content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+
+.hero-text {
+  text-align: center;
+  flex: 1;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.hero-tagline {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  background-color: #c467a9;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #ea81b9;
+}
+
+/* Featured Products */
+.featured-section {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.product-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.product-card-new {
+  flex: 1 1 calc(50% - 2rem);
+  max-width: 20rem;
+  text-align: center;
+}
+
+.product-image {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.product-title {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.product-price {
+  margin-top: 0.5rem;
+  color: #ff7845;
+  font-weight: bold;
+}
+
+/* Seasonal Promotions */
+.promotions-section {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.promotion-text {
+  margin: 1rem 0;
+  color: #666;
+}
+
+/* Testimonials */
+.testimonials-section {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.testimonials-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.testimonial {
+  flex: 1 1 calc(50% - 2rem);
+  max-width: 20rem;
+  background-color: #f0c9e0;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  font-style: italic;
+}
+
+.testimonial cite {
+  display: block;
+  margin-top: 1rem;
+  color: #333;
+  font-weight: bold;
+}
+
+
+/*Fim de Erandi */

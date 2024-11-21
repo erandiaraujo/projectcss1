@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style/style.css">
+  <link rel="stylesheet" href="./style/normalize.css">
+  <link rel="icon" href="./images/logo.png" type="icon">
+</head>
+<body>
+
+   <!--HEADER  --> 
+  <header class="header">
+    <div class="items-header">
+      <a href="/" class="logo">
+        <img src="./images/logo.png" alt="Logo" />
+      </a>
+
+      
+      <nav>
+        <ul class="pages">
+          <li><a href="index.html" class="page-link">Home</a></li>
+          <li><a href="about.html" class="page-link">About</a></li>
+          <li><a href="product.html" class="page-link">Product</a></li>
+          <li><a href="contact.html" class="page-link">Contact</a></li>
+        </ul>
+      </nav>
+
+
+      <div class="hamburger" onclick="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <script>
+        function toggleMenu() {
+          const menu = document.querySelector('.pages');
+          menu.classList.toggle('active');
+        }
+      </script>
+
+
+
+      <form class="search-bar" action="/search" method="GET">
+        <input type="text" name="query" placeholder="Search..." class="search-input" />
+        <button type="submit" class="search-button">Search</button>
+      </form>
+    </div>
+  </header>
+
+  <!--FOOTER-->
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="./images/logo.png" alt="Logo">
+      </div>
+      <div class="footer-copyright">
+        &copy; 2023 Your Company. All rights reserved.
+      </div>
+      <div class="footer-contact">
+        <h3>Work with Us</h3>
+        <form action="/submit-cv" method="POST" enctype="multipart/form-data">
+          <input type="text" placeholder="Name" required>
+          <input type="email" placeholder="Email" required>
+          <textarea placeholder="Message" required></textarea>
+          <input type="file" name="cv" placeholder="Upload CV" required>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+  
+</body>
+</html>
